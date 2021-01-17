@@ -24,20 +24,4 @@ while True:
     except:
         print("That's not a number!!!")
 
-
 guess(max_guess)
-
-def convert_image():
-    fn = input("input file name : ")
-    hratio = float(input("input height zoom ratio(default 1.0) : ") or "1.0")
-    wratio = float(input("input width zoom ratio(default 1.0) : ") or "1.0")
-    image_file = Image.open(fn)
-    image_file=image_file.resize((int(image_file.size[0]*wratio), int(image_file.size[1]*hratio)))
-    print(u'Size info:',image_file.size[0],' ',image_file.size[1],' ')
-    fo = open('result.txt','w')
-    trans_data = transform_ascii(image_file)
-    print(trans_data)
-    fo.write(trans_data)
-    fo.close()
-
-convert_image()
